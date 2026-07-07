@@ -73,3 +73,24 @@ it("Should approve and transferFrom NJC", async function () {
     expect(balance).to.equal(500);
 
 });
+it("Should emit Transfer event", async function () {
+
+    const { ethers } = await hre.network.connect();
+
+    const [owner, user] = await ethers.getSigners();
+
+    const NinjaCoin = await ethers.getContractFactory("NinjaCoin");
+    const coin = await NinjaCoin.deploy();
+
+
+    await expect(
+        coin.transfer(user.address, 1000)
+    )
+    .to.emit(coin, "Transfer")
+    .withArgs(
+        owner.address,
+        user.address,
+        1000
+    );
+
+});
