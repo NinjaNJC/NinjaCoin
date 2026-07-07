@@ -3,7 +3,7 @@
 pragma solidity ^0.8.28;
 
 contract NinjaCoin {
-
+address public owner;
     string public name = "NinjaCoin";
     string public symbol = "NJC";
 
@@ -29,6 +29,7 @@ contract NinjaCoin {
 
 
     constructor() {
+        owner = msg.sender;
         balances[msg.sender] = totalSupply;
 
         emit Transfer(
@@ -80,11 +81,11 @@ contract NinjaCoin {
     }
 
 
-    function allowance(address owner, address spender) public view returns (uint256) {
+    function allowance(address accountOwner, address spender) public view returns (uint256) {
 
-        return allowances[owner][spender];
+    return allowances[accountOwner][spender];
 
-    }
+}
 
 
     function transferFrom(
