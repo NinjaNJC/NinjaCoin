@@ -94,3 +94,15 @@ it("Should emit Transfer event", async function () {
     );
 
 });
+it("Should set the owner correctly", async function () {
+
+    const { ethers } = await hre.network.connect();
+
+    const [owner] = await ethers.getSigners();
+
+    const NinjaCoin = await ethers.getContractFactory("NinjaCoin");
+    const coin = await NinjaCoin.deploy();
+
+    expect(await coin.owner()).to.equal(owner.address);
+
+});
