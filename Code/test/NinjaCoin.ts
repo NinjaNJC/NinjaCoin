@@ -40,3 +40,36 @@ describe("NinjaCoin", function () {
   });
 
 });
+it("Should approve and transferFrom NJC", async function () {
+
+    const { ethers } = await hre.network.connect();
+
+    const [owner, spender, user] = await ethers.getSigners();
+
+    const NinjaCoin = await ethers.getContractFactory("NinjaCoin");
+    const coin = await NinjaCoin.deploy();
+
+
+    await coin.approve(spender.address, 500);
+
+
+    const allowance = await coin.allowance(
+        owner.address,
+        spender.address
+    );
+
+    expect(allowance).to.equal(500);
+
+
+    await coin.connect(spender).transferFrom(
+        owner.address,
+        user.address,
+        500
+    );
+
+
+    const balance = await coin.balanceOf(user.address);
+
+    expect(balance).to.equal(500);
+
+});
