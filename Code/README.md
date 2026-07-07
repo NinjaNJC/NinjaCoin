@@ -1,57 +1,28 @@
-# Sample Hardhat 3 Project (`mocha` and `ethers`)
+# NinjaCoin (NJC)
 
-This project showcases a Hardhat 3 project using `mocha` for tests and the `ethers` library for Ethereum interactions.
+NinjaCoin is a decentralized ERC-20 token project.
 
-To learn more about Hardhat 3, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3](https://hardhat.org/hardhat3-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+## Token Information
 
-## Project Overview
+Name: NinjaCoin
 
-This example project includes:
+Symbol: NJC
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using `mocha` and ethers.js
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+Total Supply: 210,000,000 NJC
 
-## Usage
+Decimals: 18
 
-### Running Tests
 
-To run all the tests in the project, execute the following command:
+## Features
 
-```shell
-npx hardhat test
-```
+- ERC-20 compatible token
+- Transfer between users
+- Balance checking
+- Approve and transferFrom support
+- Transfer and Approval events
 
-You can also selectively run the Solidity or `mocha` tests:
 
-```shell
-npx hardhat test solidity
-npx hardhat test mocha
-```
+## Goal
 
-### Make a deployment to Sepolia
-
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
-
-To run the deployment to a local chain:
-
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
-
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
-```
+NinjaCoin was created as a blockchain project focused on learning,
+development, and building a community-driven digital asset.
