@@ -106,3 +106,14 @@ it("Should set the owner correctly", async function () {
     expect(await coin.owner()).to.equal(owner.address);
 
 });
+it("Should have fixed total supply", async function () {
+
+    const { ethers } = await hre.network.connect();
+
+    const NinjaCoin = await ethers.getContractFactory("NinjaCoin");
+    const coin = await NinjaCoin.deploy();
+
+    expect(await coin.totalSupply())
+        .to.equal(210000000n * 10n ** 18n);
+
+});
