@@ -1,28 +1,35 @@
 # NinjaCoin (NJC)
 
-NinjaCoin is a decentralized ERC-20 token project.
+NinjaCoin is a fixed-supply ERC-20 token built with Solidity and Hardhat.
 
 ## Token Information
 
-Name: NinjaCoin
-
-Symbol: NJC
-
-Total Supply: 210,000,000 NJC
-
-Decimals: 18
-
+- Name: NinjaCoin
+- Symbol: NJC
+- Total Supply: 210,000,000 NJC
+- Decimals: 18
+- Supply: Fixed (no minting)
 
 ## Features
 
-- ERC-20 compatible token
-- Transfer between users
-- Balance checking
+- ERC-20 compatible
+- Transfer NJC between users
 - Approve and transferFrom support
 - Transfer and Approval events
+- Owner tracking
+- Fully tested with Hardhat
 
+## Development
 
-## Goal
+Built with:
 
-NinjaCoin was created as a blockchain project focused on learning,
-development, and building a community-driven digital asset.
+- Solidity 0.8.28
+- Hardhat
+- Ethers.js
+
+## Testing
+
+Run tests:
+
+```bash
+npx hardhat test
