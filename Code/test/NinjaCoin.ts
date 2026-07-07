@@ -13,7 +13,7 @@ describe("NinjaCoin", function () {
 
     const balance = await coin.balances(owner.address);
 
-    expect(balance).to.equal(210000000);
+    expect(balance).to.equal(210000000n * 10n ** 18n);
   });
 
 
