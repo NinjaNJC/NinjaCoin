@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>NinjaCoin (NJC)</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 
 <body>
+
 
     <img 
         src="../Logo/ninja.png" 
@@ -42,24 +45,30 @@
 
 
 
+
     <h2>Smart Contract</h2>
 
-<p>
-    Contract Address:
-</p>
+    <p>
+        Contract Address:
+    </p>
 
-<code>
-    0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE
-</code>
 
-<br><br>
+    <code>
+        0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE
+    </code>
 
-<a href="https://eth-sepolia.blockscout.com/address/0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE"
-target="_blank">
 
-    View Contract on Blockscout
+    <br><br>
 
-</a>
+
+    <a 
+    href="https://eth-sepolia.blockscout.com/address/0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE"
+    target="_blank">
+
+        View Contract on Blockscout
+
+    </a>
+
 
 
 
@@ -75,7 +84,9 @@ target="_blank">
 
 
 
+
     <h2>Documentation</h2>
+
 
     <p>
         Whitepaper:
@@ -83,8 +94,84 @@ target="_blank">
 
 
     <a href="../Whitepaper/NinjaCoin_Whitepaper_v0.2.md">
+
         NinjaCoin Whitepaper v0.2
+
     </a>
+
+
+
+
+    <br><br>
+
+
+    <button onclick="addToken()">
+
+        Add NJC to MetaMask
+
+    </button>
+
+
+
+
+<script>
+
+
+async function addToken() {
+
+
+    if (!window.ethereum) {
+
+        alert("Please install MetaMask");
+
+        return;
+
+    }
+
+
+
+    try {
+
+
+        await window.ethereum.request({
+
+            method: "wallet_watchAsset",
+
+            params: {
+
+                type: "ERC20",
+
+                options: {
+
+                    address: "0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE",
+
+                    symbol: "NJC",
+
+                    decimals: 18,
+
+                    image: "https://raw.githubusercontent.com/NinjaNJC/NinjaCoin/main/Logo/ninja.png"
+
+                }
+
+            }
+
+        });
+
+
+    } catch(error) {
+
+
+        console.log(error);
+
+
+    }
+
+
+}
+
+
+
+</script>
 
 
 

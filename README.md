@@ -1,125 +1,185 @@
 # 🥷 NinjaCoin (NJC)
 
-NinjaCoin is a fixed-supply ERC-20 token built with Solidity and Hardhat.
+NinjaCoin — это криптовалютный токен стандарта ERC-20, созданный на блокчейне Ethereum.
 
-The goal of NinjaCoin is to create a fast, secure and simple digital payment system.
+Цель проекта — создать быстрый, простой и безопасный токен с фиксированным количеством монет без возможности выпуска новых монет.
 
 ---
 
-## Token Information
+# 🪙 Информация о токене
 
-- Name: NinjaCoin
-- Symbol: NJC
-- Version: NinjaCoin V2
-- Network: Ethereum Sepolia Testnet
-- Total Supply: 210,000,000 NJC
-- Decimals: 18
-- Supply: Fixed (no minting)
+| Параметр | Значение |
+|---|---|
+| Название | NinjaCoin |
+| Символ | NJC |
+| Сеть | Ethereum Sepolia Testnet |
+| Стандарт | ERC-20 |
+| Общее количество | 210 000 000 NJC |
+| Десятичность | 18 |
+| Создание новых монет | Отключено |
+| Сжигание монет | Доступно |
 
-Contract Address:
+---
+
+# ⚡ Возможности
+
+✅ Фиксированное количество монет  
+✅ ERC-20 совместимость  
+✅ Переводы между пользователями  
+✅ Поддержка MetaMask  
+✅ Функция сжигания монет (Burn)  
+✅ Управление владельцем контракта  
+✅ Проверенный смарт-контракт  
+
+---
+
+# 📜 Смарт-контракт
+
+Адрес контракта:
 
 ```
 0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE
 ```
 
----
+Проверка контракта Blockscout:
 
-## Features
-
-- ERC-20 compatible
-- Transfer NJC between users
-- Approve and transferFrom support
-- Transfer and Approval events
-- Fixed total supply
-- Burn mechanism
-- Ownership management
-- Fully tested with Hardhat
+https://eth-sepolia.blockscout.com/address/0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE
 
 ---
 
-## Development
+# 🦊 Добавление NJC в MetaMask
 
-Built with:
+Сеть:
+
+```
+Ethereum Sepolia Testnet
+```
+
+Адрес токена:
+
+```
+0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE
+```
+
+Символ:
+
+```
+NJC
+```
+
+Количество знаков:
+
+```
+18
+```
+
+---
+
+# 📄 Whitepaper
+
+Документ проекта:
+
+```
+NinjaCoin_Whitepaper_v0.2.md
+```
+
+В Whitepaper описаны:
+
+- идея проекта;
+- назначение токена;
+- токеномика;
+- правила выпуска;
+- планы развития.
+
+---
+
+# 🛠 Разработка
+
+Проект создан с использованием:
 
 - Solidity 0.8.28
 - Hardhat
 - Ethers.js
-- Ethereum Sepolia Testnet
+- TypeScript
 
 ---
 
-## Smart Contract
+# 🧪 Тестирование
 
-Main contract:
-
-```
-contracts/contracts/NinjaCoinV2.sol
-```
-
-Contract verification:
-
-- Blockscout ✅
-- Sourcify ✅
-
----
-
-## Testing
-
-Run tests:
+Для запуска тестов:
 
 ```bash
 npx hardhat test
 ```
 
-Current test status:
+Текущий результат:
 
 ```
 12 passing
 ```
 
-Tests include:
+Проверены:
 
-- Supply verification
-- Token transfers
-- Approve and transferFrom
-- Transfer events
-- Burn functionality
-- Ownership transfer
-
----
-
-## Whitepaper
-
-Documentation:
-
-[NinjaCoin Whitepaper v0.2](Whitepaper/NinjaCoin_Whitepaper_v0.2.md)
+✅ Переводы NJC  
+✅ Approve  
+✅ TransferFrom  
+✅ Burn  
+✅ Ownership  
+✅ Общее количество монет  
 
 ---
 
-## Roadmap
+# 🌐 Сайт проекта
 
-### Phase 1 ✅
+Сайт NinjaCoin находится в папке:
 
-- Create smart contract
-- Deploy token on Sepolia
-- Verify contract
-- Add MetaMask support
-- Create automated tests
+```
+Website
+```
 
-### Phase 2 🚧
+Функции сайта:
 
-- Create official website
-- Improve documentation
-- Build community
-
-### Phase 3 🔮
-
-- Mainnet preparation
-- Wallet integration
-- NinjaCoin ecosystem
+- просмотр информации о токене;
+- переход к контракту;
+- открытие Whitepaper;
+- добавление NJC в MetaMask.
 
 ---
 
-## License
+# 🚀 План развития
 
-MIT License
+## Этап 1 — Основа ✅
+
+- Создание токена NinjaCoin
+- Создание смарт-контракта
+- Тестирование
+- Деплой в Sepolia
+- Проверка контракта
+- Создание сайта
+
+
+## Этап 2 — Развитие
+
+- Улучшение сайта
+- Улучшение документации
+- Создание сообщества
+- Дополнительные проверки безопасности
+
+
+## Этап 3 — Будущее
+
+- Развитие экосистемы NinjaCoin
+- Возможный переход в Mainnet
+- Новые возможности для пользователей
+
+---
+
+# ⚠️ Важно
+
+Сейчас NinjaCoin работает в сети Ethereum Sepolia Testnet.
+
+Токен используется для разработки и тестирования.
+
+---
+
+🥷 NinjaCoin — создан с духом ниндзя.
