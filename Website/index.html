@@ -16,22 +16,48 @@
 <body>
 
 
-<section class="hero">
+<nav class="navbar">
+
+<h2>🥷 NinjaCoin</h2>
+
+<div>
+
+<a href="#home">Главная</a>
+<a href="#token">Токен</a>
+<a href="#market">Market</a>
+<a href="#buy">Buy NJC</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#tokenomics">Tokenomics</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#contract">Contract</a>
+<a href="#community">Community</a>
+
+<a href="https://github.com/NinjaNJC/NinjaCoin" target="_blank">
+GitHub
+</a>
+
+</div>
+
+</nav>
 
 
-<img 
-src="../Logo/ninja.png"
-alt="NinjaCoin Logo"
-class="logo"
->
+
+<section class="hero" id="home">
 
 
-<h1>🥷 NinjaCoin (NJC)</h1>
+<img src="ninja.png" class="logo">
+
+
+<h1>
+🥷 NinjaCoin (NJC)
+</h1>
 
 
 <p class="subtitle">
+
 Быстрый и безопасный ERC-20 токен
 с фиксированным количеством монет.
+
 </p>
 
 
@@ -41,38 +67,44 @@ class="logo"
 
 <div class="stat">
 
-<h2>210M</h2>
+<h2>
+210M
+</h2>
 
-<p>Общее количество</p>
+<p>
+Total Supply
+</p>
 
 </div>
-
 
 
 <div class="stat">
 
-<h2>18</h2>
+<h2>
+18
+</h2>
 
-<p>Decimals</p>
+<p>
+Decimals
+</p>
 
 </div>
-
 
 
 <div class="stat">
 
-<h2>ERC-20</h2>
+<h2>
+ERC20
+</h2>
 
-<p>Стандарт</p>
+<p>
+Standard
+</p>
 
 </div>
 
 
 </div>
-
-
-
-<br>
 
 
 
@@ -83,18 +115,103 @@ class="logo"
 </button>
 
 
+<button onclick="connectWallet()">
+
+🔗 Connect Wallet
+
+</button>
+
+
+<p id="walletAddress">
+</p>
+
+
 
 <br><br>
 
 
 
-<a 
-href="https://eth-sepolia.blockscout.com/address/0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE"
+<a class="contract-btn"
+href="https://eth-sepolia.blockscout.com/address/0xDbfd0CF48cbB599B905CFa58503F15100CaF45Ed"
 target="_blank">
 
-🔗 Открыть контракт
+🔗 Контракт
 
 </a>
+
+
+</section>
+
+
+
+
+
+<section class="info" id="market">
+
+
+<h2>
+📊 NinjaCoin Market
+</h2>
+
+
+<p>
+
+🟢 Ethereum Sepolia Testnet
+
+<br>
+
+🚀 Mainnet coming later
+
+</p>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<h2>
+$0.00
+</h2>
+
+<p>
+Price
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+210M
+</h2>
+
+<p>
+Supply
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+0
+</h2>
+
+<p>
+Holders
+</p>
+
+</div>
+
+
+
+</div>
 
 
 
@@ -104,36 +221,665 @@ target="_blank">
 
 
 
-<section class="info">
+<section class="info" id="buy">
 
 
-<h2>Информация о токене</h2>
+<h2>
+🥷 Buy NinjaCoin
+</h2>
 
 
-<ul>
-
-<li>Название: NinjaCoin</li>
-
-<li>Символ: NJC</li>
-
-<li>Сеть: Ethereum Sepolia Testnet</li>
-
-<li>Общее количество: 210,000,000 NJC</li>
-
-<li>Decimals: 18</li>
-
-</ul>
+<div class="card">
 
 
+<p>
+🚀 Купить NJC можно будет через DEX
+</p>
+
+
+<p>
+🦊 MetaMask Compatible
+</p>
+
+
+<p>
+🔗 Ethereum Network
+</p>
 
 
 
-<h2>Smart Contract</h2>
+<button onclick="addToken()">
+
+Add NJC
+
+</button>
 
 
-<code>
+</div>
 
-0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE
+
+</section>
+
+
+
+
+<section class="info" id="dashboard">
+
+<h2>
+🥷 NinjaCoin Dashboard
+</h2>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<h2>
+🟢
+</h2>
+
+<p>
+Network
+<br>
+Ethereum Sepolia
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+✅
+</h2>
+
+<p>
+Contract
+<br>
+Verified
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+210M
+</h2>
+
+<p>
+Fixed Supply
+</p>
+
+</div>
+
+
+
+<div class="stat">
+
+<h2>
+ERC20
+</h2>
+
+<p>
+Standard
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<h2>
+🦊
+</h2>
+
+<p>
+
+Wallet
+
+<br>
+
+<span id="dashboardWallet">
+Not Connected
+</span>
+
+</p>
+
+</div>
+
+
+
+
+<div class="stat">
+
+<h2>
+💰
+</h2>
+
+<p>
+
+ETH Balance
+
+<br>
+
+<span id="ethBalance">
+0
+</span>
+
+</p>
+
+</div>
+
+
+
+
+<div class="stat">
+
+<h2>
+🪙
+</h2>
+
+<p>
+
+NJC Balance
+
+<br>
+
+<span id="njcBalance">
+0
+</span>
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🥷 Send NinjaCoin
+</h3>
+
+
+<p>
+Recipient Address
+</p>
+
+
+<input 
+id="sendAddress"
+placeholder="0x..."
+>
+
+
+<p>
+Amount NJC
+</p>
+
+
+<input 
+id="sendAmount"
+placeholder="100"
+type="number"
+>
+
+
+<br><br>
+
+
+<button onclick="sendNJC()">
+
+🚀 Send NJC
+
+</button>
+
+
+<p id="sendStatus"></p>
+
+
+
+
+</div>
+
+
+
+</section>
+
+<section class="info" id="history">
+
+<h2>📜 Transaction History</h2>
+
+<div class="card">
+
+<div id="txHistory">
+
+<p>No transactions yet.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="info" id="token">
+
+
+<h2>
+🪙 Информация о токене
+</h2>
+
+
+<div class="card">
+
+
+<p>
+<b>Название:</b> NinjaCoin
+</p>
+
+
+<p>
+<b>Символ:</b> NJC
+</p>
+
+
+<p>
+<b>Сеть:</b> Ethereum Sepolia
+</p>
+
+
+<p>
+<b>Supply:</b> 210,000,000 NJC
+</p>
+
+
+<p>
+<b>Decimals:</b> 18
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="info" id="tokenomics">
+
+
+<h2>
+💎 Tokenomics
+</h2>
+
+
+<div class="card">
+
+
+
+<div class="token-bar">
+
+<p>
+🌎 Community — 40%
+</p>
+
+<div class="progress">
+
+<span class="community"></span>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="token-bar">
+
+<p>
+🛠 Development — 20%
+</p>
+
+<div class="progress">
+
+<span class="development"></span>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="token-bar">
+
+<p>
+🚀 Ecosystem — 20%
+</p>
+
+<div class="progress">
+
+<span class="ecosystem"></span>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="token-bar">
+
+<p>
+📢 Marketing — 10%
+</p>
+
+<div class="progress">
+
+<span class="marketing"></span>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="token-bar">
+
+<p>
+🔒 Reserve — 10%
+</p>
+
+<div class="progress">
+
+<span class="reserve"></span>
+
+</div>
+
+</div>
+
+
+
+<hr>
+
+
+
+<h3>
+🥷 Token Distribution
+</h3>
+
+
+
+
+<p>
+🌎 Community:
+<b>84,000,000 NJC</b>
+</p>
+
+
+
+<p>
+🛠 Development:
+<b>42,000,000 NJC</b>
+</p>
+
+
+
+<p>
+🚀 Ecosystem:
+<b>42,000,000 NJC</b>
+</p>
+
+
+
+<p>
+📢 Marketing:
+<b>21,000,000 NJC</b>
+</p>
+
+
+
+<p>
+🔒 Reserve:
+<b>21,000,000 NJC</b>
+</p>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="info" id="roadmap">
+
+
+<h2>
+🗺️ Roadmap
+</h2>
+
+
+
+<div class="card">
+
+
+<p>
+
+<b>v0.1</b>
+
+<br>
+
+✅ Smart Contract
+
+<br>
+
+✅ ERC-20 Token
+
+<br>
+
+✅ Testnet
+
+</p>
+
+
+
+<p>
+
+<b>v0.2</b>
+
+<br>
+
+✅ Website
+
+<br>
+
+✅ Whitepaper
+
+<br>
+
+✅ MetaMask
+
+</p>
+
+
+
+<p>
+
+<b>v0.3</b>
+
+<br>
+
+⬜ Community
+
+<br>
+
+⬜ DEX Integration
+
+</p>
+
+
+
+<p>
+
+<b>v1.0</b>
+
+<br>
+
+⬜ Mainnet
+
+<br>
+
+⬜ Ninja Ecosystem
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="info" id="security">
+
+
+<h2>
+🔒 Security
+</h2>
+
+
+
+<div class="card">
+
+
+<p>
+✅ Fixed Supply
+</p>
+
+
+<p>
+✅ No Mint Function
+</p>
+
+
+<p>
+✅ ERC-20 Standard
+</p>
+
+
+<p>
+✅ Transparent Contract
+</p>
+
+
+<p>
+✅ Ethereum Security
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="info" id="contract">
+
+
+<h2>
+🔗 Smart Contract
+</h2>
+
+
+
+<div class="card">
+
+
+<p>
+<b>Network:</b>
+
+<br>
+
+Ethereum Sepolia Testnet
+
+</p>
+
+
+
+<p>
+<b>Standard:</b>
+
+<br>
+
+ERC-20
+
+</p>
+
+
+
+<p>
+<b>Status:</b>
+
+<br>
+
+✅ Verified
+
+</p>
+
+
+
+<p>
+<b>Contract Address:</b>
+
+</p>
+
+
+
+<code id="contractAddress">
+
+0xDbfd0CF48cbB599B905CFa58503F15100CaF45Ed
 
 </code>
 
@@ -143,47 +889,28 @@ target="_blank">
 
 
 
-<a 
-href="https://eth-sepolia.blockscout.com/address/0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE"
+<button onclick="copyContract()">
+
+📋 Copy Address
+
+</button>
+
+
+
+<br><br>
+
+
+
+<a class="contract-btn"
+href="https://eth-sepolia.blockscout.com/address/0xDbfd0CF48cbB599B905CFa58503F15100CaF45Ed"
 target="_blank">
 
-View Contract on Blockscout
+🔎 Blockscout
 
 </a>
 
 
-
-
-
-<h2>Возможности</h2>
-
-
-<ul>
-
-<li>⚡ Быстрые переводы</li>
-
-<li>🔗 ERC-20 совместимость</li>
-
-<li>🔥 Burn механизм</li>
-
-<li>🔐 Управление владельцем</li>
-
-<li>💎 Фиксированная эмиссия</li>
-
-</ul>
-
-
-
-
-
-<h2>Документация</h2>
-
-
-<a href="../Whitepaper/NinjaCoin_Whitepaper_v0.2.md">
-
-NinjaCoin Whitepaper v0.2
-
-</a>
+</div>
 
 
 </section>
@@ -193,77 +920,159 @@ NinjaCoin Whitepaper v0.2
 
 
 
-<script>
+<section class="info" id="features">
 
 
-async function addToken() {
-
-
-if (!window.ethereum){
-
-alert("Установите MetaMask");
-
-return;
-
-}
+<h2>
+⚡ Возможности
+</h2>
 
 
 
-try{
+<div class="card">
 
 
-await window.ethereum.request({
-
-method:"wallet_watchAsset",
-
-
-params:{
+<p>
+⚡ Быстрые переводы
+</p>
 
 
-type:"ERC20",
+<p>
+🔗 ERC-20 совместимость
+</p>
 
 
-options:{
+<p>
+🔒 Fixed Supply
+</p>
 
 
-address:"0x45F6301AD360e6a6F567DbF65371e6aEB10b4EBE",
+<p>
+🔥 Burn механизм
+</p>
 
 
-symbol:"NJC",
+<p>
+👑 Ownership управление
+</p>
 
 
-decimals:18,
+</div>
 
 
-image:"https://raw.githubusercontent.com/NinjaNJC/NinjaCoin/main/Logo/ninja.png"
-
-
-}
-
-
-}
-
-
-});
-
-
-}
-
-catch(error){
-
-console.log(error);
-
-}
+</section>
 
 
 
-}
 
 
 
-</script>
+
+<section class="info" id="whitepaper">
 
 
+<h2>
+📄 Whitepaper
+</h2>
+
+
+<div class="card">
+
+
+<a class="contract-btn"
+href="../Whitepaper/NinjaCoin_Whitepaper_v0.2.md">
+
+NinjaCoin Whitepaper v0.2
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="info" id="community">
+
+
+<h2>
+🥷 Community
+</h2>
+
+
+
+<div class="card">
+
+
+<p>
+🚀 Развитие NinjaCoin
+</p>
+
+
+<p>
+💻 Open Source разработка
+</p>
+
+
+<p>
+🌎 Сообщество скоро
+</p>
+
+
+
+<a class="contract-btn"
+href="https://github.com/NinjaNJC/NinjaCoin"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+
+<h2>
+🥷 NinjaCoin
+</h2>
+
+
+<p>
+Fast. Secure. Decentralized.
+</p>
+
+
+<p>
+Ethereum Sepolia Testnet
+</p>
+
+
+<p>
+© 2026 NinjaCoin Project
+</p>
+
+
+</footer>
+
+
+
+<script src="script.js"></script>
 
 </body>
 

@@ -2,6 +2,7 @@ body {
 
     background: #080810;
     color: white;
+
     font-family: Arial, sans-serif;
 
     margin: 0;
@@ -13,81 +14,315 @@ body {
 
 
 
-.logo {
+/* HERO */
 
-    width: 180px;
+.hero {
 
-    border-radius: 50%;
+    min-height: 600px;
 
-    margin-bottom: 20px;
+    padding: 60px 30px;
 
-    box-shadow: 0 0 30px #ff9900;
+    border-radius: 30px;
+
+
+    background:
+    radial-gradient(circle at top,
+    #332800,
+    #080810 60%);
+
+
+    box-shadow:
+    0 0 40px rgba(255,153,0,0.25);
+
 
 }
 
 
 
+/* LOGO */
+
+.logo {
+
+    width:180px;
+
+    border-radius:50%;
+
+    margin-bottom:30px;
+
+
+    filter:
+    drop-shadow(0 0 25px orange);
+
+}
+
+
+
+
+/* TITLE */
 
 h1 {
 
-    font-size: 50px;
+    font-size:56px;
 
-    margin-bottom: 10px;
+    color:#ff9900;
 
-    color: #ff9900;
-
-}
-
-
-
-
-p {
-
-    font-size: 20px;
-
-    line-height: 1.6;
+    margin-bottom:20px;
 
 }
 
 
 
 
-h2 {
+.subtitle {
 
-    margin-top: 50px;
+    font-size:24px;
 
-    color: #ff9900;
+    color:#ddd;
 
-    font-size: 32px;
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.5;
 
 }
+
+
+
+
+
+/* STATS */
+
+
+.stats {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-top:50px;
+
+}
+
+
+
+.stat {
+
+
+    background:#16161d;
+
+
+    width:160px;
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+.stat h2 {
+
+
+    margin:0;
+
+
+    font-size:35px;
+
+
+    color:#ff9900;
+
+
+}
+
+
+
+.stat p {
+
+
+    font-size:16px;
+
+
+    color:#aaa;
+
+
+}
+
+
+
+
+/* BUTTON */
+
+
+button {
+
+
+    margin-top:40px;
+
+
+    padding:15px 35px;
+
+
+    font-size:20px;
+
+
+    font-weight:bold;
+
+
+    color:black;
+
+
+    background:#ff9900;
+
+
+    border:none;
+
+
+    border-radius:15px;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+    0 0 25px #ff9900;
+
+
+}
+
+
+
+button:hover {
+
+
+    background:white;
+
+
+}
+
+
+
+
+
+/* LINKS */
+
+
+a {
+
+
+    display:inline-block;
+
+
+    margin:15px;
+
+
+    padding:12px 25px;
+
+
+    background:#ff9900;
+
+
+    color:black;
+
+
+    border-radius:10px;
+
+
+    font-size:18px;
+
+
+    font-weight:bold;
+
+
+    text-decoration:none;
+
+
+}
+
+
+
+a:hover {
+
+
+    background:white;
+
+
+}
+
+
+
+
+
+/* INFO SECTION */
+
+
+.info {
+
+
+    margin-top:60px;
+
+
+}
+
+
+
+.info h2 {
+
+
+    color:#ff9900;
+
+
+    font-size:32px;
+
+
+}
+
 
 
 
 
 ul {
 
-    list-style: none;
 
-    padding: 0;
+    list-style:none;
+
+
+    padding:0;
+
 
 }
 
 
 
+
 li {
 
-    background: #12121c;
 
-    margin: 10px auto;
+    background:#12121c;
 
-    padding: 15px;
 
-    border-radius: 12px;
+    max-width:500px;
 
-    max-width: 500px;
 
-    font-size: 18px;
+    margin:10px auto;
+
+
+    padding:15px;
+
+
+    border-radius:12px;
+
+
+    font-size:18px;
+
 
 }
 
@@ -97,23 +332,115 @@ li {
 
 code {
 
-    display: block;
 
-    background: #12121c;
+    display:block;
 
-    padding: 20px;
 
-    border-radius: 15px;
+    background:#12121c;
 
-    max-width: 600px;
 
-    margin: auto;
+    padding:20px;
 
-    word-break: break-all;
 
-    color: #00ff99;
+    max-width:600px;
 
-    font-size: 16px;
+
+    margin:auto;
+
+
+    border-radius:15px;
+
+
+    color:#00ff99;
+
+
+    word-break:break-all;
+
+
+}
+.big-number {
+
+    font-size:35px;
+    color:#ff9900;
+    font-weight:bold;
+
+}
+
+
+
+.token-item {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    background:#12121c;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+}
+
+
+
+.token-item strong {
+
+    color:#00ff99;
+
+}
+/* NAVBAR */
+
+.navbar {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 40px;
+
+    background:#12121c;
+
+    border-radius:20px;
+
+    margin-bottom:40px;
+
+}
+
+
+.navbar h2 {
+
+    color:#ff9900;
+
+    margin:0;
+
+}
+
+
+.navbar a {
+
+    background:none;
+
+    color:white;
+
+    padding:10px;
+
+    margin:5px;
+
+    font-size:16px;
+
+}
+
+
+.navbar a:hover {
+
+    color:#ff9900;
 
 }
 
@@ -121,62 +448,158 @@ code {
 
 
 
-a {
+/* CARDS */
 
-    display: inline-block;
 
-    margin: 15px;
+.card {
 
-    padding: 12px 25px;
+    background:#12121c;
 
-    background: #ff9900;
+    max-width:600px;
 
-    color: black;
+    margin:30px auto;
 
-    border-radius: 10px;
+    padding:25px;
 
-    font-size: 18px;
+    border-radius:20px;
 
-    font-weight: bold;
-
-    text-decoration: none;
+    box-shadow:
+    0 0 25px rgba(255,153,0,0.15);
 
 }
 
 
 
 
-a:hover {
+.card p {
 
-    background: white;
+    font-size:18px;
+
+    line-height:1.8;
 
 }
 
 
 
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    margin-top:80px;
+
+    padding:40px;
+
+    background:#12121c;
+
+    border-radius:25px;
+
+}
+
+
+footer h2 {
+
+    color:#ff9900;
+
+}
+
+
+footer p {
+
+    color:#aaa;
+
+}
+/* ANIMATIONS */
+
+
+.hero,
+.info,
+footer {
+
+    animation: fadeUp 1s ease;
+
+}
+
+
+
+@keyframes fadeUp {
+
+
+from {
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* LOGO ANIMATION */
+
+
+.logo {
+
+    animation: floatLogo 3s infinite ease-in-out;
+
+}
+
+
+
+@keyframes floatLogo {
+
+
+0% {
+
+    transform:translateY(0);
+
+}
+
+
+50% {
+
+    transform:translateY(-15px);
+
+}
+
+
+100% {
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* BUTTON EFFECT */
 
 
 button {
 
-    margin-top: 30px;
 
-    padding: 15px 35px;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    color: black;
-
-    background: #ff9900;
-
-    border: none;
-
-    border-radius: 15px;
-
-    cursor: pointer;
-
-    box-shadow: 0 0 20px #ff9900;
+transition:0.3s;
 
 }
 
@@ -184,148 +607,647 @@ button {
 
 button:hover {
 
-    background: white;
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 40px #ff9900;
+
 
 }
-.hero {
 
-    padding: 60px 20px;
 
-    margin-bottom: 50px;
 
-    background: linear-gradient(
-        145deg,
-        #11111d,
-        #080810
-    );
 
-    border-radius: 25px;
+
+/* CARD HOVER */
+
+
+.card {
+
+
+transition:0.3s;
+
+
+}
+
+
+
+.card:hover {
+
+
+transform:translateY(-5px);
+
+
+box-shadow:
+
+0 0 35px rgba(255,153,0,0.3);
+
+
+}
+/* TOKENOMICS BARS */
+
+.token-bar {
+
+    max-width:600px;
+
+    margin:20px auto;
+
+    text-align:left;
+
+}
+
+
+.token-bar p {
+
+    margin-bottom:8px;
+
+    font-size:18px;
+
+    color:white;
+
+}
+
+
+
+.progress {
+
+    width:100%;
+
+    height:20px;
+
+    background:#080810;
+
+    border-radius:20px;
+
+    overflow:hidden;
 
     box-shadow:
-    0 0 40px rgba(255,153,0,0.25);
+    0 0 15px rgba(255,153,0,0.2);
 
 }
 
 
 
-.hero h3 {
+.progress span {
 
-    font-size: 24px;
+    display:block;
 
-    color: #cccccc;
+    height:100%;
 
-    max-width: 700px;
+    background:#ff9900;
 
-    margin: 20px auto;
+    border-radius:20px;
 
-}
-
-
-
-.hero-info {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-
-    margin: 40px 0;
+    animation:loadBar 1.5s ease;
 
 }
 
 
 
-.hero-info div {
+.community {
 
-    background: #12121c;
-
-    padding: 25px;
-
-    border-radius: 20px;
-
-    width: 150px;
+    width:40%;
 
 }
 
 
 
-.hero-info strong {
+.development {
 
-    display: block;
-
-    font-size: 35px;
-
-    color: #ff9900;
+    width:20%;
 
 }
 
 
 
-.hero-info span {
+.ecosystem {
 
-    color: #aaa;
+    width:20%;
 
 }
+
+
+
+.marketing {
+
+    width:10%;
+
+}
+
+
+
+.reserve {
+
+    width:10%;
+
+}
+
+
+
+@keyframes loadBar {
+
+
+from {
+
+    width:0;
+
+}
+
+
+}
+.token-bar {
+    margin:20px 0;
+}
+
+
+.progress {
+
+    width:100%;
+    height:18px;
+
+    background:#222;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress span {
+
+    display:block;
+
+    height:100%;
+
+    border-radius:20px;
+
+}
+
+
+
+.community {
+
+    width:40%;
+
+    background:#ff9900;
+
+}
+
+
+
+.development {
+
+    width:20%;
+
+    background:#00ff99;
+
+}
+
+
+
+.ecosystem {
+
+    width:20%;
+
+    background:#0099ff;
+
+}
+
+
+
+.marketing {
+
+    width:10%;
+
+    background:#ff0099;
+
+}
+
+
+
+.reserve {
+
+    width:10%;
+
+    background:#ffffff;
+
+}
+/* CARD ANIMATION */
+
+.card,
+.stat {
+
+    transition:0.4s;
+
+}
+
+
+.card:hover,
+.stat:hover {
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 40px rgba(255,153,0,0.4);
+
+}
+
+
+/* GLOW CONTRACT */
+
+code {
+
+    transition:0.3s;
+
+}
+
+
+code:hover {
+
+    box-shadow:
+    0 0 30px rgba(0,255,153,0.5);
+
+}
+html {
+
+    scroll-behavior:smooth;
+
+}
+.market-status {
+
+    color:#00ff99;
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+/* MOBILE VERSION */
+
+@media (max-width: 768px) {
+
+
+body {
+
+    padding:15px;
+
+}
+
+
+/* NAVBAR */
+
+.navbar {
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+
+.navbar div {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.navbar a {
+
+    font-size:14px;
+
+    margin:5px;
+
+}
+
+
+
+/* HERO */
+
 .hero {
-    min-height: 600px;
-    background:
-    radial-gradient(circle at top, #252000, #0b0b0f 60%);
-    border-radius: 30px;
-    padding: 60px 30px;
-    text-align: center;
-    box-shadow: 
-    0 0 40px rgba(255,153,0,0.25);
+
+    padding:40px 15px;
+
 }
 
 
-.hero .logo {
-    width: 180px;
-    margin-bottom: 30px;
-    filter: drop-shadow(0 0 20px orange);
+
+.logo {
+
+    width:130px;
+
 }
 
 
-.hero h1 {
-    font-size: 56px;
-    color: #ff9900;
-    margin-bottom: 20px;
+
+h1 {
+
+    font-size:36px;
+
 }
 
 
-.hero p {
-    font-size: 24px;
-    color: #ddd;
-    max-width: 700px;
-    margin: auto;
+
+.subtitle {
+
+    font-size:18px;
+
 }
+
+
+
+/* STATS */
 
 
 .stats {
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-top:50px;
+
+    flex-direction:column;
+
+    align-items:center;
+
 }
+
 
 
 .stat {
-    background:#16161d;
-    padding:25px;
-    border-radius:20px;
-    width:160px;
+
+    width:80%;
+
 }
 
 
-.stat h2 {
-    margin:0;
-    color:#ff9900;
-    font-size:35px;
+
+/* BUTTONS */
+
+
+button {
+
+    width:90%;
+
+    font-size:17px;
+
 }
 
 
-.stat p {
+
+a {
+
+    font-size:15px;
+
+    padding:10px 15px;
+
+}
+
+
+
+/* CARDS */
+
+
+.card {
+
+    width:auto;
+
+    padding:20px;
+
+}
+
+
+
+.card p {
+
     font-size:16px;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    padding:25px 15px;
+
+}
+
+
+}
+/* DASHBOARD STYLE */
+
+#dashboard .stat {
+
+    border:1px solid rgba(255,153,0,0.3);
+
+    background:#12121c;
+
+}
+
+
+#dashboard .stat:first-child h2 {
+
+    color:#00ff99;
+
+    text-shadow:
+    0 0 20px #00ff99;
+
+}
+
+
+
+#dashboard .stat h2 {
+
+    font-size:32px;
+
+}
+
+
+
+#dashboard .stat:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 35px rgba(255,153,0,0.5);
+
+}
+.token-title {
+
+    color:#ff9900;
+
+    font-size:24px;
+
+    text-align:center;
+
+}
+/* TOKEN DISTRIBUTION */
+
+
+.distribution {
+
+    margin-top:30px;
+
+}
+
+
+
+.distribution p {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    background:#080810;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin:10px 0;
+
+}
+
+
+
+.distribution span {
+
+    color:#00ff99;
+
+    font-weight:bold;
+
+}
+
+
+
+hr {
+
+    border:none;
+
+    height:1px;
+
+    background:#333;
+
+    margin:30px 0;
+
+}
+
+
+
+.token-title {
+
+    color:#ff9900;
+
+}
+/* BUY SECTION */
+
+#buy .card {
+
+    text-align:center;
+
+}
+
+
+#buy button {
+
+    margin-top:20px;
+
+}
+
+
+
+/* MARKET STATUS */
+
+.market-status {
+
+    color:#00ff99;
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* DISTRIBUTION */
+
+
+.distribution p {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    background:#16161d;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin:10px 0;
+
+
+}
+
+
+
+.distribution span {
+
+
+    color:#00ff99;
+
+    font-weight:bold;
+
+
+}
+
+
+
+/* COPY BUTTON */
+
+
+#contract button {
+
+
+    background:#ff9900;
+
+    color:black;
+
+    margin-top:20px;
+
+
+}
+
+
+
+#contract button:hover {
+
+
+    background:white;
+
+
+}
+
+
+
+/* TOKEN TITLE */
+
+
+.token-title {
+
+
+    color:#ff9900;
+
+    text-align:center;
+
+
 }

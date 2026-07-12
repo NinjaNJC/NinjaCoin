@@ -4,14 +4,15 @@ pragma solidity ^0.8.28;
 
 contract NinjaCoin {
 
-    address public owner;
-
     string public name = "NinjaCoin";
     string public symbol = "NJC";
 
     uint8 public decimals = 18;
 
     uint256 public totalSupply = 210000000 * 10 ** decimals;
+
+
+    address public owner;
 
 
     mapping(address => uint256) private balances;
@@ -33,11 +34,24 @@ contract NinjaCoin {
     );
 
 
+    event Burn(
+        address indexed from,
+        uint256 value
+    );
+
+
+    event OwnershipTransferred(
+        address indexed oldOwner,
+        address indexed newOwner
+    );
+
+
     constructor() {
 
         owner = msg.sender;
 
         balances[msg.sender] = totalSupply;
+
 
         emit Transfer(
             address(0),
@@ -47,29 +61,41 @@ contract NinjaCoin {
     }
 
 
-    modifier onlyOwner() {
+    modifier onlyOwner(){
 
-        require(msg.sender == owner, "Not the owner");
+        require(
+            msg.sender == owner,
+            "Not owner"
+        );
 
         _;
     }
 
 
+
     function balanceOf(address account)
         public
         view
-        returns (uint256)
+        returns(uint256)
     {
         return balances[account];
     }
 
 
-    function transfer(address to, uint256 amount)
+
+    function transfer(
+        address to,
+        uint256 amount
+    )
         public
-        returns (bool)
+        returns(bool)
     {
 
-        require(to != address(0), "Invalid address");
+        require(
+            to != address(0),
+            "Zero address"
+        );
+
 
         require(
             balances[msg.sender] >= amount,
@@ -93,9 +119,14 @@ contract NinjaCoin {
     }
 
 
-    function approve(address spender, uint256 amount)
+
+
+    function approve(
+        address spender,
+        uint256 amount
+    )
         public
-        returns (bool)
+        returns(bool)
     {
 
         allowances[msg.sender][spender] = amount;
@@ -112,15 +143,22 @@ contract NinjaCoin {
     }
 
 
-    function allowance(address accountOwner, address spender)
+
+
+    function allowance(
+        address accountOwner,
+        address spender
+    )
         public
         view
-        returns (uint256)
+        returns(uint256)
     {
 
         return allowances[accountOwner][spender];
 
     }
+
+
 
 
     function transferFrom(
@@ -129,8 +167,14 @@ contract NinjaCoin {
         uint256 amount
     )
         public
-        returns (bool)
+        returns(bool)
     {
+
+        require(
+            to != address(0),
+            "Zero address"
+        );
+
 
         require(
             balances[from] >= amount,
@@ -152,6 +196,7 @@ contract NinjaCoin {
         allowances[from][msg.sender] -= amount;
 
 
+
         emit Transfer(
             from,
             to,
@@ -161,4 +206,82 @@ contract NinjaCoin {
 
         return true;
     }
+
+
+
+
+    function burn(uint256 amount)
+        public
+        returns(bool)
+    {
+
+        require(
+            balances[msg.sender] >= amount,
+            "Not enough NJC"
+        );
+
+
+        balances[msg.sender] -= amount;
+
+        totalSupply -= amount;
+
+
+
+        emit Transfer(
+            msg.sender,
+            address(0),
+            amount
+        );
+
+
+        emit Burn(
+            msg.sender,
+            amount
+        );
+
+
+        return true;
+    }
+
+
+
+
+    function transferOwnership(address newOwner)
+        public
+        onlyOwner
+    {
+
+        require(
+            newOwner != address(0),
+            "Zero address"
+        );
+
+
+        emit OwnershipTransferred(
+            owner,
+            newOwner
+        );
+
+
+        owner = newOwner;
+    }
+
+
+
+
+
+    function renounceOwnership()
+        public
+        onlyOwner
+    {
+
+        emit OwnershipTransferred(
+            owner,
+            address(0)
+        );
+
+
+        owner = address(0);
+    }
+
 }

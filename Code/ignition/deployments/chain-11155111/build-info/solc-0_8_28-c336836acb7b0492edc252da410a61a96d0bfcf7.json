@@ -1,0 +1,49 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-c336836acb7b0492edc252da410a61a96d0bfcf7",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.9.1"
+  },
+  "userSourceNameMap": {
+    "contracts/contracts/NinjaCoin.sol": "project/contracts/contracts/NinjaCoin.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/contracts/NinjaCoin.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.28;\r\n\r\ncontract NinjaCoin {\r\n\r\n    string public name = \"NinjaCoin\";\r\n    string public symbol = \"NJC\";\r\n\r\n    uint8 public decimals = 18;\r\n\r\n    uint256 public totalSupply = 210000000 * 10 ** decimals;\r\n\r\n\r\n    address public owner;\r\n\r\n\r\n    mapping(address => uint256) private balances;\r\n\r\n    mapping(address => mapping(address => uint256)) private allowances;\r\n\r\n\r\n    event Transfer(\r\n        address indexed from,\r\n        address indexed to,\r\n        uint256 value\r\n    );\r\n\r\n\r\n    event Approval(\r\n        address indexed owner,\r\n        address indexed spender,\r\n        uint256 value\r\n    );\r\n\r\n\r\n    event Burn(\r\n        address indexed from,\r\n        uint256 value\r\n    );\r\n\r\n\r\n    event OwnershipTransferred(\r\n        address indexed oldOwner,\r\n        address indexed newOwner\r\n    );\r\n\r\n\r\n    constructor() {\r\n\r\n        owner = msg.sender;\r\n\r\n        balances[msg.sender] = totalSupply;\r\n\r\n\r\n        emit Transfer(\r\n            address(0),\r\n            msg.sender,\r\n            totalSupply\r\n        );\r\n    }\r\n\r\n\r\n    modifier onlyOwner(){\r\n\r\n        require(\r\n            msg.sender == owner,\r\n            \"Not owner\"\r\n        );\r\n\r\n        _;\r\n    }\r\n\r\n\r\n\r\n    function balanceOf(address account)\r\n        public\r\n        view\r\n        returns(uint256)\r\n    {\r\n        return balances[account];\r\n    }\r\n\r\n\r\n\r\n    function transfer(\r\n        address to,\r\n        uint256 amount\r\n    )\r\n        public\r\n        returns(bool)\r\n    {\r\n\r\n        require(\r\n            to != address(0),\r\n            \"Zero address\"\r\n        );\r\n\r\n\r\n        require(\r\n            balances[msg.sender] >= amount,\r\n            \"Not enough NJC\"\r\n        );\r\n\r\n\r\n        balances[msg.sender] -= amount;\r\n\r\n        balances[to] += amount;\r\n\r\n\r\n        emit Transfer(\r\n            msg.sender,\r\n            to,\r\n            amount\r\n        );\r\n\r\n\r\n        return true;\r\n    }\r\n\r\n\r\n\r\n\r\n    function approve(\r\n        address spender,\r\n        uint256 amount\r\n    )\r\n        public\r\n        returns(bool)\r\n    {\r\n\r\n        allowances[msg.sender][spender] = amount;\r\n\r\n\r\n        emit Approval(\r\n            msg.sender,\r\n            spender,\r\n            amount\r\n        );\r\n\r\n\r\n        return true;\r\n    }\r\n\r\n\r\n\r\n\r\n    function allowance(\r\n        address accountOwner,\r\n        address spender\r\n    )\r\n        public\r\n        view\r\n        returns(uint256)\r\n    {\r\n\r\n        return allowances[accountOwner][spender];\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    function transferFrom(\r\n        address from,\r\n        address to,\r\n        uint256 amount\r\n    )\r\n        public\r\n        returns(bool)\r\n    {\r\n\r\n        require(\r\n            to != address(0),\r\n            \"Zero address\"\r\n        );\r\n\r\n\r\n        require(\r\n            balances[from] >= amount,\r\n            \"Not enough NJC\"\r\n        );\r\n\r\n\r\n        require(\r\n            allowances[from][msg.sender] >= amount,\r\n            \"Not approved\"\r\n        );\r\n\r\n\r\n        balances[from] -= amount;\r\n\r\n        balances[to] += amount;\r\n\r\n\r\n        allowances[from][msg.sender] -= amount;\r\n\r\n\r\n\r\n        emit Transfer(\r\n            from,\r\n            to,\r\n            amount\r\n        );\r\n\r\n\r\n        return true;\r\n    }\r\n\r\n\r\n\r\n\r\n    function burn(uint256 amount)\r\n        public\r\n        returns(bool)\r\n    {\r\n\r\n        require(\r\n            balances[msg.sender] >= amount,\r\n            \"Not enough NJC\"\r\n        );\r\n\r\n\r\n        balances[msg.sender] -= amount;\r\n\r\n        totalSupply -= amount;\r\n\r\n\r\n\r\n        emit Transfer(\r\n            msg.sender,\r\n            address(0),\r\n            amount\r\n        );\r\n\r\n\r\n        emit Burn(\r\n            msg.sender,\r\n            amount\r\n        );\r\n\r\n\r\n        return true;\r\n    }\r\n\r\n\r\n\r\n\r\n    function transferOwnership(address newOwner)\r\n        public\r\n        onlyOwner\r\n    {\r\n\r\n        require(\r\n            newOwner != address(0),\r\n            \"Zero address\"\r\n        );\r\n\r\n\r\n        emit OwnershipTransferred(\r\n            owner,\r\n            newOwner\r\n        );\r\n\r\n\r\n        owner = newOwner;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    function renounceOwnership()\r\n        public\r\n        onlyOwner\r\n    {\r\n\r\n        emit OwnershipTransferred(\r\n            owner,\r\n            address(0)\r\n        );\r\n\r\n\r\n        owner = address(0);\r\n    }\r\n\r\n}"
+      }
+    }
+  }
+}
